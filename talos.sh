@@ -1,35 +1,27 @@
 #!/bin/bash
 
+# Declare font augmentation vars, these are used to change shell font style and colors.
+RESET=$(tput sgr0) BOLD=$(tput bold) BLUE=$(tput setaf 4) MAGENTA=$(tput setaf 5)
+BLACK=$(tput setaf 0) RED=$(tput setaf 1)CYAN=$(tput setaf 6) WHITE=$(tput setaf 7)
+GREEN=$(tput setaf 2) YELLOW=$(tput setaf 3)
+
 # Check for required commands
 for cmd in figlet qm openssl pv; do
-  if ! command -v "$cmd" >/dev/null 2>&1; then
+  if ! command -v "$cmd" >/dev/null 2>&1; then ${RED}
     echo "Error: Required command '$cmd' is not installed or not in PATH."
     exit 1
   fi
 done
 
-# Declare font augmentation vars, these are used to change shell font style and colors.
-
-RESET=$(tput sgr0)    BOLD=$(tput bold)
-BLACK=$(tput setaf 0) RED=$(tput setaf 1)
-GREEN=$(tput setaf 2) YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)  MAGENTA=$(tput setaf 5)
-CYAN=$(tput setaf 6)  WHITE=$(tput setaf 7)
-
-# Trap to handle script interruption
-# This will ensure that if the script is interrupted (e.g., Ctrl+C), it exits safely
-# and provides a message to the user.
+# Trap to handle script interruption, provides a message and safe exit.
 trap 'echo -e "\n${RED}Script interrupted. Exiting safely.${RESET}"; exit 1' INT
 
-# Halt the script on any error
-# This ensures that if any command fails, the script will stop executing immediately.
+# Halt script on any error and if they fail, script will stop immediately.
 set -e
 
-# Display a welcome message using figlet
-# This will print a large ASCII art text in the terminal to welcome the user.
-clear
-echo "${BOLD}""${GREEN}"
-figlet "k3s like I'm five!" -f ~+/.fonts/standard.flf
+# Display project title and initial questions
+clear && echo "${RESET}""${BOLD}""${GREEN}"
+figlet "Bulk Deploy" -f ~+/.fonts/standard.flf
 figlet "Template Maker" -f ~+/.fonts/standard.flf
 # Print a message to the user about the template creation process
 echo "${RESET}"
