@@ -32,3 +32,14 @@ actions:
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
+tools:
+  enabled:
+    - ansible-lint@25.7.0
+    - flake8@7.3.0
+    - helm@3.9.4
+    - sqlfmt@0.27.0
+    - sql-formatter@15.6.6
+    - kube-linter@0.7.2
+    - 1password-cli@2.19.0
+    - markdown-table-prettify@3.6.0
+    - markdownlint-cli2@0.18.1
