@@ -1,7 +1,13 @@
-# Proxmox Rapid VM Deployment Scripts
-## Templates and Clones
 
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
+# Proxmox Bulk Deploy #
+
+Deploy a large amount of generic/reusable VM's in a fast, safe and efficent
+manner with the added plus of not requiring any large automation/deployment
+solutions such as Terraform, Ansible, Chef or Salt..this script for the
+most part should be portable between Linux distros.
+
+## Templates and Clones ##
 
 - [x] Functional two-step script
 - [x] Hardware agnostic
@@ -44,5 +50,6 @@ ZFS, Ceph, or other storage backends supported by Proxmox. I do plan on adding
 selection prompts in the future for you to choose the storage type, but for now
 you can simply edit the scripts to change the storage type to your liking.
 
-### Proxmox Cloud-Init Template Generator
+### Proxmox Cloud-Init Template Generator ###
+
 
