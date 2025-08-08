@@ -24,12 +24,11 @@ clear && echo "${RESET}""${BOLD}""${GREEN}"
 figlet "Bulk Deploy" -f ~+/.fonts/standard.flf
 figlet "Template Maker" -f ~+/.fonts/standard.flf
 # Print a message to the user about the template creation process
-echo "${RESET}"
-echo "${BOLD}${W}"
-echo "Pick a template number, round numbers in the thousands"
-echo "provide plenty of room for all the nodes plus easy"
-echo "organization, fast expansion and reduced resource use"
-echo "Example: VM Template ID '5000'"
+echo "${RESET}""${BOLD}""${W}"
+echo ""
+echo "Pick a template number, preferrably above 1000+"
+echo "ideally the range you pick should be far away from"
+echo "any existing VM's and LXC's. Example ID '5000'"
 echo "${RESET}"
 # Loop to ensure valid input for $VMTID which is the Template/VM ID in Proxmox
 # This will ensure that the user provides a valid number and not an empty input.
