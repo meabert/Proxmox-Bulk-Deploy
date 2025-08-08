@@ -37,20 +37,15 @@ while true; do
     echo ""
     read -p "VM Template ID: " VMTID
     clear
-    # Check if input is empty
-    if [[ -z "$VMTID" ]]; then
+    if [[ -z "$VMTID" ]]; then     # Check if input is empty
         echo "Error: Input cannot be empty. Please try again."
-    # Check if input contains only numbers
-    elif [[ ! "$VMTID" =~ ^[0-9]+$ ]]; then
+    elif [[ ! "$VMTID" =~ ^[0-9]+$ ]]; then     # Check if input contains only numbers
         echo "Error: Input must contain only numbers. Please try again."
-    # Check if input is within the valid range (1000-999999) Proxmox soft-max is 1000000
-    elif [[ "$VMTID" -lt 1000 || "$VMTID" -gt 999999 ]]; then
+    elif [[ "$VMTID" -lt 1000 || "$VMTID" -gt 999999 ]]; then   # Proxmox soft-max is 1000000
         echo "Error: Input must be a number between 1000 and 999999. Please try again."
-    # Check if the ID already exists as a VM
-    elif ls /etc/pve/nodes/*/qemu-server/$VMTID.conf 1> /dev/null 2>&1; then
+    elif ls /etc/pve/nodes/*/qemu-server/$VMTID.conf 1> /dev/null 2>&1; then # Check if ID exists as VM.
         echo "Error: A VM or template with ID $VMTID already exists. Please choose a different ID."
-    # Check if the ID already exists as an LXC container
-    elif ls /etc/pve/nodes/*/lxc/$VMTID.conf 1> /dev/null 2>&1; then
+    elif ls /etc/pve/nodes/*/lxc/$VMTID.conf 1> /dev/null 2>&1; then     # Check if ID exists a LXC.
         echo "Error: A container with ID $VMTID already exists. Please choose a different ID."
     # Validation complete, exit the loop
     else
