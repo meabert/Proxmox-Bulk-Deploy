@@ -126,7 +126,7 @@ echo ""
 # Hash the password using SHA-512 and the generated salt
 HASHED_PASSWORD=$(openssl passwd -6 -salt "$SALT" "$PLAIN_PASSWORD")
 qm set $VMTID --ciuser $USER_NAME --cipassword "$HASHED_PASSWORD"
-qm set $VMTID --cicustom vendor=local:snippets/install-qemu-guest-agent.yaml
+qm set $VMTID --cicustom vendor=/mnt/pve/cephfs/snippets/install-qemu-guest-agent.yaml
 qm set $VMTID --ipconfig0 ip=dhcp
 qm template $VMTID
 echo ""
@@ -139,3 +139,4 @@ exit 0
 # End of script
 echo "${BOLD}${GREEN}Template creation completed!${RESET}"
 echo "You can now use this template to deploy new VMs in Proxmox."
+echo "To start immediately run build.sh next!"
