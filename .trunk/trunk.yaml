@@ -1,27 +1,27 @@
----
-# Docs https://docs.trunk.io/cli and https://docs.trunk.io/reference/trunk-yaml
+# This file controls the behavior of Trunk: https://docs.trunk.io/cli
+# To learn more about the format of this file, see https://docs.trunk.io/reference/trunk-yaml
 version: 0.1
 cli:
   version: 1.24.0
-# Plugins (https://docs.trunk.io/plugins)
+# Trunk provides extensibility via plugins. (https://docs.trunk.io/plugins)
 plugins:
   sources:
     - id: trunk
       ref: v1.7.1
       uri: https://github.com/trunk-io/plugins
-# Runtimes (https://docs.trunk.io/runtimes)
+# Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
 runtimes:
   enabled:
     - go@1.21.0
     - node@22.16.0
     - python@3.10.8
-# Linters (https://docs.trunk.io/check/configuration)
+# This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   enabled:
-    - osv-scanner@2.0.3
     - checkov@3.2.458
     - git-diff-check
     - markdownlint@0.45.0
+    - osv-scanner@2.0.3
     - prettier@3.6.2
     - shellcheck@0.10.0
     - shfmt@3.6.0
@@ -34,14 +34,8 @@ actions:
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
 tools:
+  disabled:
+    - shfmt
+    - shellcheck
   enabled:
-    - php-cs-fixer@3.54.0
-    - ansible-lint@25.7.0
-    - flake8@7.3.0
-    - helm@3.9.4
-    - sqlfmt@0.27.0
-    - sql-formatter@15.6.6
-    - kube-linter@0.7.2
-    - 1password-cli@2.19.0
-    - markdown-table-prettify@3.6.0
     - markdownlint-cli2@0.18.1
