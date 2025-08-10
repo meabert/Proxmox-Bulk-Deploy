@@ -42,8 +42,8 @@ for (( i=0; i<${#text}; i++ )); do
 done
 echo
 export NUM1=$VMTID && export NUM2=100 && VM1=$((NUM1+NUM2))
-export NUM1=$VMTID && export NUM2=500 && VM2=$((NUM1+NUM2))
-export NUM1=$VMTID && export NUM2=900 && VM3=$((NUM1+NUM2))
+export NUM1=$VMTID && export NUM2=200 && VM2=$((NUM1+NUM2))
+export NUM1=$VMTID && export NUM2=300 && VM3=$((NUM1+NUM2))
 echo "Server: $VM1 Worker: $VM2 HAProxy: $VM3"
 figlet "Server: $VM1" -f .fonts/standard.flf
 figlet "Worker: $VM2" -f .fonts/standard.flf
