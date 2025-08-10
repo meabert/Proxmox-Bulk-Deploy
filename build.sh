@@ -172,7 +172,7 @@ for (( i=1; i<=REPETITIONS; i++ )); do
     qm resize $VMID_NEW scsi0 32G
     qm set $VMID_NEW --cpu host
     qm set $VMID_NEW --memory 2048
-    qm set $VMID_NEW --cores 1
+    qm set $VMID_NEW --cores 2
     qm set $VMID_NEW --ciupgrade 1
     qm set $VMID_NEW --ipconfig0 ip=dhcp
     sleep 1
