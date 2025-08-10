@@ -108,7 +108,7 @@ echo "This may take a few minutes, please be patient..."
 sleep 2
 qm create $VMTID --name "debian-13-cloudimg" --ostype l26 --cpu host --cores 2 --memory 2048 \
   --net0 virtio,bridge=vmbr0,tag=15 --scsihw virtio-scsi-pci
-qm set $VMTID --scsi0 thin1:0,import-from=/root/images/debian-13-cloud.raw
+qm set $VMTID --scsi0 thin1:0,import-from=/root/images/debian-13-generic.qcow2
 qm set $VMTID --ide2 thin1:cloudinit
 qm set $VMTID --boot order=scsi0
 qm set $VMTID --tags debian,13,cloud,trixie
