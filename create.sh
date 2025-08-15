@@ -176,6 +176,7 @@ if ls /etc/pve/nodes/*/qemu-server/$VMTID.conf 1> /dev/null 2>&1; then
 fi
 
 # Create the template
+echo "${WHITE}"
 echo "Creating template with ID: $VMTID" | pv -qL 25
 echo "This may take a few minutes, please be patient..." | pv -qL 50
 
