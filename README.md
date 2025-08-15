@@ -11,11 +11,12 @@ most part should be portable between Linux distros.
 
 - [x] Functional two-step script
 - [x] Hardware agnostic
-- [ ] Add visual metrics - in addition to logging
-- [ ] Add ZFS - other options (scripts are pre-configured with LVM-Thin)
+- [x] Add visual metrics - in addition to logging
+- [x] Add ZFS - other options (scripts are pre-configured with LVM-Thin)
 - [ ] Options to autoinstall various configurations of K3S
 - [ ] Create fork for Talos flavors
-- [ ] Addititional OS choices (Debian, Rocky, Arch, Alpine)
+- [x] Addititional OS choices (VIA --image flag)
+- [ ] Add automated image download to eliminate file management
 - [ ] Automated killswitch script (shut everything down in one press)
 - [ ] Realign and map environment for VM's as they're created / destroyed
 - [ ] Automate some SDN tasks - Simplistic Infrastructure as Code
@@ -25,31 +26,40 @@ with minimal to no additional configuration required compared to other
 tools like Ansible, Packer or Terraform.
 
 [!TIP]
-For best performance and ease of use, it is recommended to run these scripts
-locally and stream ISO/Images from offload such as a NAS, SAN, or similar
-Deploying many VM's at the same time will place significant strain on the
-network. One can greatly improve the performance of the deployment if there
-are multiple nodes to store images on.
+> For best performance and ease of use, it is recommended to run these scripts
+> locally and stream ISO/Images from offload such as a NAS, SAN, or similar
+> Deploying many VM's at the same time will place significant strain on the
+> network and drives. One can greatly improve the performance of the deployment
+> if there are multiple nodes or drives to store images on exclusively.
 
-With this tool you can easily have a 20+ node cluster up and running in a matter
-of minutes.This is of course assuming you have the hardware, network, additional
-nodes and storage to support all of it. My present homelab setup consists of
-three proxmox nodes, 25Gb ethernet, at least 128GB RAM each, one local NVMe
-drive per node and a Ceph storage pool.
+[!NOTE]
+This tool enables one to easily have a 20+ VM logical cluster up and running 
+in a matter of minutes. This is of course assuming you have the hardware, 
+network, additional nodes and storage to support all of it. 
 
-Please note these scripts are presently configured to use username/password
-authentication, but you can easily modify them to use SSH key authentication by
-changing the `ssh` command in the scripts to include the `-i` flag with your
-private key file. The current scripts will also prompt you for a global username
-and password when a template is first created, use this for initial setup and
-flip the switch to key-authentication later on when you are ready to go to production.
+[!WARNING]
+> Please note these scripts are presently configured to use username/password
+> authentication, the password will be stored as hashed value in a file after
+> creation for record-keeping. Make sure you .gitignore this file since it will
+> have sensitive information! SSH password authentication is standard however 
+> if and when you are ready to make anything public facing you MUST switch to 
+> key-authentication when you are ready to go to production.
 
-At this time I have these scripts setup for LVM-thin storage, but you can easily
-modify the `create.sh` and `build.sh` scripts to use other storage types such as
-ZFS, Ceph, or other storage backends supported by Proxmox. I do plan on adding
-selection prompts in the future for you to choose the storage type, but for now
-you can simply edit the scripts to change the storage type to your liking.
+[!CAUTION] Operator’s Oath**  
+> 🚫 **Obscurity is not security** — bots don't care you put it on port 44523.”  
+> 🔓 **Open ports are an open invitation** — and the guests don’t bring snacks.  
+> 📊 **Know your threat level** — ignorance is a privilege your firewall can’t afford.  
+> 🧠 **Don’t overthink; use common sense** — but verify like you’re paid by the log entry.  
+> 🔑 **Password is not a password** — yes, someone already tried it. Successfully.
 
 ### Proxmox Cloud-Init Template Generator ###
 
+Script documentation is a work in progress. 
 
+#### Clone the Repo #### 
+```
+git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && 
+```
+##### Test out the script #####
+```
+c
