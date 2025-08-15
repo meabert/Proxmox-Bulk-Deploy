@@ -172,17 +172,20 @@ if ls /etc/pve/nodes/*/qemu-server/$VMTID.conf 1> /dev/null 2>&1; then
   else
     echo ""${GREEN}
     echo "✅ No existing template for $VMTID was located, proceeding" | pv -qL 25
-    echo "with template creation... standby${RESET}" | pv -qL 50
+    echo "with template creation... standby${RESET}${WHITE}" | pv -qL 50
 fi
 
 # Create the template
-echo "${WHITE}"
+echo ""
 echo "Creating template with ID: $VMTID" | pv -qL 25
 echo "This may take a few minutes, please be patient..." | pv -qL 50
-
+echo "................................................." | pv -qL 25
 sleep 1
 echo "${RESET}${WHITE}"
-
+clear
+# Query for target selection
+echo "✅ Which storage target should the template be installed?" 
+echo ""
 # Pick the storage ID only (not the volume)
 STORAGE_TARGET="$(
   /root/scripts/storage-selector.py /root/images/debian-13-generic.qcow2
