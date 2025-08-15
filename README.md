@@ -21,7 +21,7 @@ This is desinged to be simple press and go script that is system agnostic
 with minimal to no additional configuration required compared to other
 tools like Ansible, Packer or Terraform.
 
-[!TIP]
+> [!TIP]
 > For best performance and ease of use, it is recommended to run these scripts
 > locally and stream ISO/Images from offload such as a NAS, SAN, or similar
 > Deploying many VM's at the same time will place significant strain on the
@@ -32,7 +32,7 @@ This tool enables one to easily spin up 20+ logical VM's in a matter of minutes.
 This is of course assuming requirements are met for hardware, network, storage, 
 staff and the underlying infrastructure to support all of it. 
 
-[!WARNING]
+> [!WARNING]
 > For ease of use all scripts will use default password authentication, the
 > password will be stored as hashed value in a file after creation for
 > record-keeping. Make sure you .gitignore this file since it will have
@@ -45,7 +45,7 @@ that said this tool comes with zero warranty or liability, check the script
 before you run the code, check the drive before you nuke it and think before
 you execute.
 
-[!CAUTION] Operator’s Oath**  
+> [!CAUTION] Operator’s Oath**  
 > 🚫 **Obscurity is not security** — bots don't care you put it on port 44523.”  
 > 🔓 **Open ports are an open invitation** — and the guests don’t bring snacks.  
 > 📊 **Know your threat level** — ignorance is a privilege your firewall can’t afford.  
@@ -69,3 +69,9 @@ Run the template maker with the --image flag, use this to tell the script where
 you keep your image
 ```
 ./create.sh --image /myimages/debian-13.qcow
+```
+The script will prompt you to pick an ID number for the template.
+Pick the disk you want the template on
+Provide username for cloudinit
+Provide password for cloudinit
+Template specific values saved to .template.env
