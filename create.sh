@@ -261,19 +261,19 @@ echo "Exporting relevant environment variables... to .template.env"
 echo "feel free to use these variables to expand functionality."
 echo "export VMTID=$VMTID" > ~+/.template.env
 echo "Exporting the template ID......................." | pv -qL 50
-ecoo "................................................" | pv -qL 50
+echo "................................................" | pv -qL 50
 echo "export USER_NAME=$USER_NAME" >> ~+/.template.env
 echo "Exporting default user ID......................." | pv -qL 50
-ecoo "................................................" | pv -qL 50
+echo "................................................" | pv -qL 50
 echo "export HASHED_PASSWORD=$HASHED_PASSWORD" >> ~+/.template.env
 echo "Exporting password hash (keep secure)..........." | pv -qL 50
-ecoo "................................................" | pv -qL 50
+echo "................................................" | pv -qL 50
 echo "export STORAGE_TARGET=$STORAGE_TARGET" >> ~+/.template.env
 echo "Exporting the storage target...................." | pv -qL 50
-ecoo "................................................" | pv -qL 50
+echo "................................................" | pv -qL 50
 echo "# $(date -Is) imported image: $SOURCE_IMAGE" >> ~+/.template.env
 echo "Exporting image details........................." | pv -qL 50
-ecoo "................................................" | pv -qL 50
+echo "................................................" | pv -qL 50
 exit 0
 # End of script
 echo "${BOLD}${GREEN} ✅ Template creation completed!${RESET}"
