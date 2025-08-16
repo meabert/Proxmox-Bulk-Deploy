@@ -30,18 +30,12 @@ tools like Ansible, Packer or Terraform.
 
 This tool enables one to easily spin up 20+ logical VM's in a matter of minutes. 
 This is of course assuming requirements are met for hardware, network, storage, 
-staff and the underlying infrastructure to support all of it. 
-
-> [!WARNING]
-> For ease of use all scripts will use default password authentication, the
-> password will be stored as hashed value in a file after creation for
-> record-keeping. Make sure you .gitignore this file since it will have
-> sensitive information! When ready to make anything public facing it MUST
-> be switched to key-authentication at the minimum for production.
-
-My background is in the Payment Services Industry - I bring my experience in
-PCI-DSS Compliance and will do my best to apply this where appropriate. With
-that said this tool comes with zero warranty or liability, check the script
+staff and the underlying infrastructure to support all of it. My professional 
+background includes various compliance related items such as PCI-DSS, GDPR, 
+and HIPPA will do my best to apply this where appropriate. With that said 
+this tool comes with zero warranty or liability, this is a 'for fun'
+resource and should never be a substitue or replacement for certified and 
+experienced industry experience. Even for fun always be alert, check the script
 before you run the code, check the drive before you nuke it and think before
 you execute.
 
@@ -75,3 +69,16 @@ Pick the disk you want the template on
 Provide username for cloudinit
 Provide password for cloudinit
 Template specific values saved to .template.env
+
+> [!WARNING]
+> For ease of use all scripts SSH use default password authentication,
+> this will be stored as hashed value in a file after creation for
+> record-keeping and as a development resource to expand the functionality
+> of these scritps.
+>
+> Environment Variables File:
+> <b>.template.env</b>
+> 
+> Make sure you .gitignore this file since it will have
+> sensitive information! When ready to make anything public facing it MUST
+> be switched to key-authentication at the minimum for production.
