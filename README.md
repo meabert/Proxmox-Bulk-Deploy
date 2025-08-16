@@ -102,7 +102,9 @@ CephFS, etcd, databases...etc
 > 
 > Be sure to .gitignore this file since it will have sensitive information
 
-<pre>```mermaidflowchart LRA[STEP 1: BUILD] --> B[STEP 2: CREATE]A -->|Minimal config| BA -->|Hardware‑agnostic| BA -->|Storage‑type prompt| BB -->|Hooks: ZFS, Ceph, Talos ready| C[Future‑proof]```</pre>
+```mermaidflowchart 
+LRA[STEP 1: BUILD] --> B[STEP 2: CREATE]A -->|Minimal config| BA -->|Hardware‑agnostic| BA -->|Storage‑type prompt| BB -->|Hooks: ZFS, Ceph, Talos ready| C[Future‑proof]
+```
 
 ###### Friendly reminders and checklists for so many VM's ######
 
