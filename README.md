@@ -7,7 +7,7 @@ manner with the added plus of not requiring any large automation/deployment
 solutions such as Terraform, Ansible, Chef or Salt..this script for the
 most part should be portable between Linux distros.
 
-```mermaid
+<pre>```mermaid
 +-----------------------+       +----------------------+
 |   STEP 1: BUILD       |       |   STEP 2: CREATE     |
 |-----------------------|       |----------------------|
@@ -16,7 +16,7 @@ most part should be portable between Linux distros.
 | • Nothing to install  |       |   flavors ready      |
 | • Storage‑type prompt |       | • Hooks: ZFS, Ceph   |
 +-----------------------+       +----------------------+
-```
+```</pre>
 
 ## Templates and Clones ##
 
