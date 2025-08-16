@@ -40,7 +40,8 @@ before you run the code, check the drive before you nuke it and think before
 you execute.
 
 > [!CAUTION]
-> **Operator’s Oath**  
+> 💻 **Operator’s Oath** 
+> 
 > 🚫 **Obscurity is not security** — bots don't care you put it on port 44523.”  
 > 🔓 **Open ports are an open invitation** — and the guests don’t bring snacks.  
 > 📊 **Know your threat level** — ignorance is a privilege your firewall can’t afford.  
@@ -96,19 +97,20 @@ Wow that's a lot of VM's there...
 
 + Turn off password authentication for SSH once keys are setup
 + Minimum attack surface, if you don't need the port don't open it
++ SSL is useful even with [airgapped systems](https://www.bleepingcomputer.com/news/security/etherled-air-gapped-systems-leak-data-via-network-card-leds/) - physical access is a thing
 + Utilize all available tools together to create a unified solution
   - systemd - allow or deny access to sockets IPAddressAllow / IPAddressDeny
   - nftables - iptables [replacement](https://wiki.nftables.org/wiki-nftables/index.php/What_is_nftables%3F) for packet filtering (firewalling), NAT,
     mangling and packet classification
-
-
-Only allow the ports absolutely needed - Never DMZ unless 100% certain
-Segment your networks - Most modern routers support some form of VLANs
-Proxies are you friend and there's a lot - Nginx Proxy Manager, Caddy, Traefik
-Proxy Everything behind a VPS - Pangolin
-Site to Site VPN - UniFi Ecosystem
-CloudFlare Tunnel - No Port Forwarding
-WireGuard / TailScale / Headscale / Netmaker - VPN 
+  - single sign on - authentik, authelia, keycloak, auth0
+  - network level authentication - mac filtering, radius, static routes
+  - segment your networks - most modern routers support some form of VLANs
+    
++ Proxies are you friend and there's a lot - Nginx Proxy Manager, Caddy, Traefik
++ Proxy Everything behind a VPS - Pangolin
++ Site to Site VPN - UniFi Ecosystem
++ CloudFlare Tunnel - No Port Forwarding
++ WireGuard / TailScale / Headscale / Netmaker - VPN 
 
 
 
