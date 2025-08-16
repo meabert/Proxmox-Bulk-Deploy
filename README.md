@@ -70,6 +70,14 @@ Provide username for cloudinit
 Provide password for cloudinit
 Template specific values saved to .template.env
 
+Run the VM creation script - this will prompt for servers, workers and load
+balancers (three sets) labeling will be configured automatically which is 
+particularly useful for clustered services - i.e. Kubernetes, Docker Swarm, 
+CephFS, etcd, databases...etc
+```
+./build.sh
+```
+
 > [!WARNING]
 > For ease of use all scripts SSH use default password authentication,
 > this will be stored as hashed value in a file after creation for
@@ -81,9 +89,9 @@ Template specific values saved to .template.env
 > 
 > Be sure to .gitignore this file since it will have sensitive information
 
-###### Wow that's a lot of VM's there... ######
+Wow that's a lot of VM's there...
 
-Friendly reminders and checklists for so many VM's
+###### Friendly reminders and checklists for so many VM's ######
 
 + Turn off password authentication for SSH once keys are setup
 + Minimum attack surface, if you don't need the port don't open it
