@@ -7,6 +7,17 @@ manner with the added plus of not requiring any large automation/deployment
 solutions such as Terraform, Ansible, Chef or Salt..this script for the
 most part should be portable between Linux distros.
 
+```mermaid
++-----------------------+       +----------------------+
+|   STEP 1: BUILD       |       |   STEP 2: CREATE     |
+|-----------------------|       |----------------------|
+| • Minimal config      |       | • Rapid VM deploy    |
+| • Hardware‑agnostic   | --->  | • Talos / future     |
+| • Nothing to install  |       |   flavors ready      |
+| • Storage‑type prompt |       | • Hooks: ZFS, Ceph   |
++-----------------------+       +----------------------+
+```
+
 ## Templates and Clones ##
 
 - [x] Functional two-step script
@@ -53,17 +64,17 @@ you execute.
 Script documentation is a work in progress. 
 
 #### Clone the Repo #### 
-```
+```bash
 git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && cd Proxmox-Bulk-Deploy
 ```
 ##### Test out the script #####
 Make the scripts executable
-```
+```bash
 chmod +x build.sh create.sh storage-selector.py
 ```
 Run the template maker with the --image flag, use this to tell the script where
 you keep your image
-```
+```bash
 ./create.sh --image /myimages/debian-13.qcow
 ```
 The script will prompt you to pick an ID number for the template.
@@ -76,7 +87,7 @@ Run the VM creation script - this will prompt for servers, workers and load
 balancers (three sets) labeling will be configured automatically which is 
 particularly useful for clustered services - i.e. Kubernetes, Docker Swarm, 
 CephFS, etcd, databases...etc
-```
+```bash
 ./build.sh
 ```
 
@@ -91,7 +102,7 @@ CephFS, etcd, databases...etc
 > 
 > Be sure to .gitignore this file since it will have sensitive information
 
-Wow that's a lot of VM's there...
+<pre>```mermaidflowchart LRA[STEP 1: BUILD] --> B[STEP 2: CREATE]A -->|Minimal config| BA -->|Hardware‑agnostic| BA -->|Storage‑type prompt| BB -->|Hooks: ZFS, Ceph, Talos ready| C[Future‑proof]```</pre>
 
 ###### Friendly reminders and checklists for so many VM's ######
 
