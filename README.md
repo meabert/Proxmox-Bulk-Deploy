@@ -79,6 +79,27 @@ Template specific values saved to .template.env
 > Environment Variables File:
 > <b>.template.env</b>
 > 
-> Make sure you .gitignore this file since it will have
-> sensitive information! When ready to make anything public facing it MUST
-> be switched to key-authentication at the minimum for production.
+> Be sure to .gitignore this file since it will have sensitive information
+
+###### Wow that's a lot of VM's there... ######
+
+Friendly reminders and checklists for so many VM's
+
++ Turn off password authentication for SSH once keys are setup
++ Minimum attack surface, if you don't need the port don't open it
++ Utilize all available tools together to create a unified solution
+  - systemd - allow or deny access to sockets IPAddressAllow / IPAddressDeny
+  - nftables - iptables [replacement](https://wiki.nftables.org/wiki-nftables/index.php/What_is_nftables%3F) for packet filtering (firewalling), NAT,
+    mangling and packet classification
+
+
+Only allow the ports absolutely needed - Never DMZ unless 100% certain
+Segment your networks - Most modern routers support some form of VLANs
+Proxies are you friend and there's a lot - Nginx Proxy Manager, Caddy, Traefik
+Proxy Everything behind a VPS - Pangolin
+Site to Site VPN - UniFi Ecosystem
+CloudFlare Tunnel - No Port Forwarding
+WireGuard / TailScale / Headscale / Netmaker - VPN 
+
+
+
