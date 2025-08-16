@@ -14,11 +14,8 @@ flowchart TD
     C -->|$VMTID + 100<br>+1 for each VM| D[Server Examples<br>server01 - ID 5100<br>server02 - ID 5101]
     C -->|$VMTID + 200<br>+1 for each VM| E[Worker Examples<br>worker01 - ID 5200<br>worker02 - ID 5201]
     C -->|$VMTID + 300<br>+1 for each VM| F[LB Examples<br>lb01 - ID 5300<br>lb02 - ID 5301]
-```
-
-<p align=center>
-    
-```bash
+```    
+```shell
 +-----------------------+       +----------------------+
 |   STEP 1: BUILD       |       |   STEP 2: CREATE     |
 |-----------------------|       |----------------------|
@@ -28,7 +25,6 @@ flowchart TD
 | • Storage‑type prompt |       | • Hooks: ZFS, Ceph   |
 +-----------------------+       +----------------------+
 ```
-</p>
 
 ## Templates and Clones ##
 
