@@ -39,7 +39,8 @@ experienced industry experience. Even for fun always be alert, check the script
 before you run the code, check the drive before you nuke it and think before
 you execute.
 
-> [!CAUTION] Operator’s Oath  
+> [!CAUTION]
+> **Operator’s Oath**  
 > 🚫 **Obscurity is not security** — bots don't care you put it on port 44523.”  
 > 🔓 **Open ports are an open invitation** — and the guests don’t bring snacks.  
 > 📊 **Know your threat level** — ignorance is a privilege your firewall can’t afford.  
