@@ -56,9 +56,9 @@ background includes various compliance related items such as PCI-DSS, GDPR,
 and HIPPA will do my best to apply this where appropriate. With that said 
 this tool comes with zero warranty or liability, this is a 'for fun'
 resource and should never be a substitue or replacement for certified and 
-experienced industry experience. Even for fun always be alert, check the script
-before you run the code, check the drive before you nuke it and think before
-you execute.
+experienced industry council. Even when it's for fun always be alert, check 
+the script before you pull it, check the drive before you nuke it and 
+think before you execute.
 
 > [!CAUTION]
 > 💻 **Operator’s Oath** 
