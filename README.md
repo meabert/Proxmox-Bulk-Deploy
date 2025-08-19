@@ -73,15 +73,10 @@ think before you execute.
 
 Script documentation is a work in progress. 
 
-#### Clone the Repo #### 
-```bash
-git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && cd Proxmox-Bulk-Deploy
-```
-##### Test out the script #####
-Make the scripts executable
-```bash
-chmod +x build.sh create.sh storage-selector.py
-```
+**Start off by cloning the repo:**
+```git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && cd Proxmox-Bulk-Deploy```
+**Make the scripts executable:**
+```chmod +x build.sh create.sh storage-selector.py```
 Run the template maker with the --image flag, use this to tell the script where
 you keep your image
 ```bash
