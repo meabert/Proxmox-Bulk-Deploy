@@ -73,15 +73,14 @@ think before you execute.
 
 Script documentation is a work in progress. 
 
-**Start off by cloning the repo:**
-```git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && cd Proxmox-Bulk-Deploy```
-**Make the scripts executable:**
-```chmod +x build.sh create.sh storage-selector.py```
-Run the template maker with the --image flag, use this to tell the script where
-you keep your image
-```bash
-./create.sh --image /myimages/debian-13.qcow
-```
+**Start off by cloning the repo:**  
+```git clone https://github.com/meabert/Proxmox-Bulk-Deploy/ && cd Proxmox-Bulk-Deploy```  
+**Make the scripts executable:**  
+```chmod +x build.sh create.sh storage-selector.py```  
+**Run the template maker with the --image flag, use this to tell the script where  
+you keep your image:**  
+```./create.sh --image /myimages/debian-13.qcow```  
+
 The script will prompt you to pick an ID number for the template.
 Pick the disk you want the template on
 Provide username for cloudinit
